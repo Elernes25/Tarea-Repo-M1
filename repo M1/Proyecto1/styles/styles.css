@@ -1,0 +1,82 @@
+/*como cargar fuentes de google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Tangerine');
+@import url('https://fonts.googleapis.com/css2?family=Lexend Deca');
+
+
+h1{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+  /*font-family: Tangerine, serif;*/
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: 4px 4px 4px #aaa;
+}
+h4{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family:monospace;
+    /*Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;*/
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+/*bodyes*/
+.principal{
+    background-color: burlywood;
+}
+body{
+   /* background-image: url("banner-1.jpg");
+    background-repeat: no-repeat; */
+    background-color: rgb(29, 2, 65);
+    
+    /*para que el footer quede abajo*/   
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+/**/
+.contenedor-de-imagenes {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.tarjeta{
+    text-indent: 10px;
+    text-align: justify;
+    padding: 10px;
+    margin: 0.2%;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+.subtitulo{
+    font-family: "Lexend Deca";
+    text-align: center;
+}
+.imagen{
+    /*border: aqua;*/
+    /*border-color: aqua;*/
+
+    font-family: Tangerine, serif;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+.lista{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+hr{
+    background-color: darkorange;   
+    width: 600px;
+    border-width: 2px;
+    margin: 0 auto;
+}
+.h4principal{
+    color: black;
+}
+footer{
+    padding: 5px;
+    margin-top: auto;  /**/
+}
