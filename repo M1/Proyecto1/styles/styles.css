@@ -1,17 +1,30 @@
 /*como cargar fuentes de google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Tangerine');
 @import url('https://fonts.googleapis.com/css2?family=Lexend Deca');
-
+@import url('https://fonts.googleapis.com/css2?family=Spirax');
+/*@import url('https://fonts.googleapis.com/css2?family=Bilbo');*/
 
 h1{
     padding-top: 40px;
     padding-bottom: 40px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   
+    font-size: 32px;
   /*font-family: Tangerine, serif;*/
     color: rgb(255, 255, 255);
     text-align: center;
     text-shadow: 4px 4px 4px #aaa;
+}
+h2{
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 0.6em;    /*0.83em por defecto*/
+    margin-bottom: 0.6em;
+}
+.descripcion{ 
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: "Spirax";
+    font-size: 30px;
 }
 h4{
     padding-top: 5px;
@@ -24,6 +37,12 @@ h4{
 /*bodyes*/
 .principal{
     background-color: burlywood;
+}
+p{
+    line-height: normal;
+}
+li{
+    line-height: normal;
 }
 body{
    /* background-image: url("banner-1.jpg");
