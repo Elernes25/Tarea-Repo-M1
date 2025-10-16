@@ -100,7 +100,7 @@ botonE.addEventListener("click",(event)=>{
 /****************ACTIVIDAD 03********/
 let dsn= new Diseño();
 function objetodiseñoHtml(dsn){
-    const {nombre,descripcion,enlace} =dsn;    //destructuring
+    const {id,nombre,descripcion,enlace} =dsn;    //destructuring
     const tarjeta=document.createElement("div");
     const tituloPrincipal=document.createElement("h2");
     const descrip=document.createElement("P");
@@ -115,17 +115,25 @@ function objetodiseñoHtml(dsn){
     im.style.width="40%";
     btnBorrar.innerHTML="Borrar";
 
+    
+    btnBorrar.setAttribute("data-id", id);  // el mismo id del objeto 
+    btnBorrar.addEventListener("click", function() {  
+      repositorio.borrarDiseño(id);
+      mostrarTodo(); //refresca los cambios
+    });
+
+       
     tarjeta.appendChild(tituloPrincipal);
     tarjeta.appendChild(descrip);
     tarjeta.appendChild(im);
-    tarjeta.appendChild(btnBorrar)
-      
+    tarjeta.appendChild(btnBorrar);
+   
     //Retornar el <div> finalizado con todos los elementos correspondientes dentro.                
     return tarjeta;
 }   
 
 
-/********ACTIVIDAD 04 */
+/********ACTIVIDAD 04 ********/
 function mostrarTodo(){
     document.getElementById("contenedor-de-tarjetas").innerHTML="";  //vaciar contenido
     const arrayTodos = repositorio.traeTodosLosDiseños();
