@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-   <!-- <link rel="stylesheet" href="styles/reset.css"> -->
-   <link rel="stylesheet" href="styles/reset.css">
+    <!--Reseteo de los estilos-->
+    <link rel="stylesheet" href="styles/reset.css">
+    <!--cargado de bootsrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--fin carga bootstrap-->
+    <!---Modificaciones personales-->
     <link rel="stylesheet" href="styles/styles.css">
     
     <title>Mi Proyecto 1</title>
@@ -62,18 +65,24 @@
     </div>
 <!--------FORMULARIO-------------->
 <section>
+    <h3>Diseños:</h3>
     <form action="/enviar" method="post">
         <label for="nombre">Nombre:</label><br>
-      <input type="text" id="nombre" name="nombre" required><br><br>
+      <input type="text" id="nombre" name="nombre" size="30" required><br><br>
 
         <label for="desc">Descripción:</label><br>
-        <input type="desc" id="desc" name="desc" required><br><br>
+        <input type="desc" id="desc" name="desc" size="60" required><br><br>
 
-        <label for="URLimg">URL:</label><br>
-        <input id="URLimg" name="URLimg" ><br><br>
+        <label for="URLimg">URL imagen:</label><br>
+        <input id="URLimg" name="URLimg" size="60"><br><br>
 
-        <button id="botonEnviar">Enviar</button>
+        <button id="botonEnviar" class="btn btn-primary">Cargar</button>
+        <button id="botonMostrar" class="btn btn-primary">Mostrar todo</button>
     </form>
+     <div id="contenedor-de-tarjetas">
+    <!--- lugar para las tarjetasCreadas-->
+     </div>
+
   </section>
 <!-------------------------------->
     </main><!---->
@@ -83,11 +92,15 @@
         <h4 class="h4principal">Consultas: <img src="Assets/img/wsp.png" width="20px">  03777-620669  <img src="/Assets/img/insta.png" width="20px" >  rouraernesto
             <br>Web Design - 2025 Derechos reservados.
         </h4>
-   
     </footer>
     
     
     <script src="/scripts/index.js"> </script>
+    <!--bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--fin bootstrap-->
 
 </body>
 
