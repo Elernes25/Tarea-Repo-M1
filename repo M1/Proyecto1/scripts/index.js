@@ -1,4 +1,12 @@
 console.log("estoy conectado");
+botonL = document.getElementById("botonLimpiar");
+botonL.disabled=true; //arranca deshabilitado
+botonL.addEventListener("click",(event)=>{
+    event.preventDefault();
+    document.getElementById("contenedor-de-tarjetas").innerHTML="";  //vaciar contenido
+    botonL.disabled=true; //se deshabilita
+});
+
 
 //alert("ventana emergente")
 class Diseño{         //diseño para mostrar y elegir
@@ -36,19 +44,19 @@ class Repositorio{
 let repositorio =new Repositorio();   //**instancia de la clase Repositorio */
 //**************PRUEBAS ****************/
 repositorio.crearDiseño("vidriera1", "temporada otoño-inverno","https://plotter7.com.ar/wp-content/webpc-passthru.php?src=https://plotter7.com.ar/wp-content/uploads/2019/10/temporada-paraguas.jpg&nocache=1");
-console.log(repositorio.diseños[0]);
+//console.log(repositorio.diseños[0]);
 repositorio.crearDiseño("pared1", "ambiente cool","https://dbdzm869oupei.cloudfront.net/img/sticker/medium/6447cf4adcda7.jpg");
-console.log(repositorio.diseños[1]);
+//console.log(repositorio.diseños[1]);
 repositorio.crearDiseño("auto1", "racingspeedcool","https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoadmTkUe3X2a26c185NL6YNNrXm4GzwsZlxrB2FfVOJh3frv2ZihjsZaGwfm-oeEEWH1NlLNAJOn5UU3RDzKRfO_2I5HMaxMOn4VkT6gmaK8uJH2fGZ1sbGM2Feewoydq7oaB48r4dkU0/s1600/TE+-+Tuning+Extremo+-+Ploteados+y+vinilos-para-coches.jpg");
-console.log(repositorio.diseños[2]);
+//console.log(repositorio.diseños[2]);
 repositorio.crearDiseño("vidriera2", "navidad01","https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQo0ovStwncdzROYvI_eAnhHZ9VXL1z89ovipBJusMcYZd5Q0y-Zy3P09RbyZVCkPzCRs5V6F8kyOoOT5QhI1H27y144U5k09wqutpqa2eZW2f2WibUvIL-mQ");
-console.log(repositorio.diseños[3]);
+//console.log(repositorio.diseños[3]);
 
-console.log(repositorio.diseños);
+//console.log(repositorio.diseños);
 
-repositorio.borrarDiseño(3);
-console.log(repositorio.diseños);
-console.log(repositorio.traeTodosLosDiseños());
+//repositorio.borrarDiseño(3);
+//console.log(repositorio.diseños);
+//console.log(repositorio.traeTodosLosDiseños());
 //**************FIN PRUEBAS ****************/
 
 //**************DOM FUNCIONA************************** */
@@ -77,25 +85,32 @@ botonE.addEventListener("click",(event)=>{
 
         repositorio.crearDiseño(nombre,desc,enlace);
     
-        //**creacion de tarjeta para mostrar imagen */
+        //**creacion de tarjeta para mostrar imagen **/
         const tarjeta=document.createElement("div");
         const tituloPrincipal=document.createElement("h2");
         const descrip=document.createElement("P");
         const im=document.createElement("img");
-    
+        const aclaracion=document.createElement("h6");
+          
         tarjeta.classList.add("tarjetaCreada"); //definido en styles.css 
 
         tituloPrincipal.innerHTML=nombre;
         descrip.innerHTML=desc;
         im.src=enlace;
-        im.style.width="40%";
+        aclaracion.innerHTML="Tarjeta creada. Si desea eliminar clickear Mostrar todo";
 
         tarjeta.appendChild(tituloPrincipal);
         tarjeta.appendChild(descrip);
         tarjeta.appendChild(im);
+        tarjeta.appendChild(aclaracion);
+        
+        //************* */
         document.getElementById("contenedor-de-tarjetas").appendChild(tarjeta);
+        botonL.disabled=false; //habilita boton limpiar
+
     }
 });
+
 
 /****************ACTIVIDAD 03********/
 let dsn= new Diseño();
@@ -106,23 +121,21 @@ function objetodiseñoHtml(dsn){
     const descrip=document.createElement("P");
     const im=document.createElement("img");
     const btnBorrar=document.createElement("Button");
-    
+        
     tarjeta.classList.add("tarjetaCreada"); //definido en styles.css 
 
     tituloPrincipal.innerHTML=nombre;
     descrip.innerHTML=descripcion;
     im.src=enlace;
-    im.style.width="40%";
-    btnBorrar.innerHTML="Borrar";
-
     
+    btnBorrar.innerHTML='<img src="../Assets/img/trash.jpg" alt="ico" style="width:16px;vertical-align:middle; margin-right:5px;"> Borrar';
+  
     btnBorrar.setAttribute("data-id", id);  // el mismo id del objeto 
     btnBorrar.addEventListener("click", function() {  
       repositorio.borrarDiseño(id);
       mostrarTodo(); //refresca los cambios
     });
 
-       
     tarjeta.appendChild(tituloPrincipal);
     tarjeta.appendChild(descrip);
     tarjeta.appendChild(im);
@@ -149,5 +162,8 @@ botonM.addEventListener("click",(event)=>{
     event.preventDefault();
     
     mostrarTodo();
+    botonL.disabled=false; //habilita boton limpiar
 }
 )
+
+
